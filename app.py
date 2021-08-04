@@ -16,11 +16,11 @@ def predict():
 
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
-    prediction = model.predict_proba(final_features)[:, 1]
+    prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
 
-    return render_template("index.html", prediction_text= "PROBABILITY OF BEING ABSENT IS ; {}".format(output*100))
+    return render_template("index.html", prediction_text= "PROBABILITY OF BEING ABSENT ; {}".format(output))
 
 @app.route('/results',methods=["GET","POST"])
 def results():
@@ -28,7 +28,7 @@ def results():
     data = request.get_json(force=True)
     prediction = model.predict([np.array(list(data.values()))])
 
-    output =  round(prediction)
+    output = prediction[0]
     return jsonify({'prediction': str(output)})
 
 if __name__ == "__main__":
