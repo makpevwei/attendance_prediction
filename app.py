@@ -20,7 +20,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template("index.html", prediction_text= "PROBABILITY OF BEING ABSENT ; {}".format(output)*100)
+    return render_template("index.html", prediction_text= "PROBABILITY OF BEING ABSENT ; {}".format(output*100))
 
 @app.route('/results',methods=["GET","POST"])
 def results():
@@ -29,7 +29,7 @@ def results():
     prediction = model.predict_proba([np.array(list(data.values()))])[:,1]
 
     output = round(prediction[0],2)
-    return jsonify({'prediction': str(output)*100}+"%")
+    return jsonify({'prediction': str(output*100)+"%"})
 
 if __name__ == "__main__":
     app.run()
