@@ -1,1 +1,202 @@
 
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <title>Loan Predict</title>
+  </head>
+
+  <body>
+
+<div class="container main">
+  <div class="jumbotron" id="holder">
+     <br>
+       <center><b></b></center>
+     <br>
+     <br>
+    <center><h1 class='main_heading'> Attendance Prediction</h1></center>
+	<p>Machine Learning Algorithm to predict attendance.</p>
+	<p><b>Please fill the form below</b></p>
+    <br>
+    <form class="form-horizontal" action="/predict"method="post">
+    
+     <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Gender" required="required">
+                <option value="0">Please choose your gender</option>
+                <option value="1">male</option>
+                <option value="0">female</option>
+          </select>
+        </div>
+      </div>
+      
+        <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Weather Condition" required="required">
+                <option value="0">Weather Condition</option>
+                <option value="1">sunny</option>
+                <option value="0">rainy</option>
+          </select>
+        </div>
+      </div>
+      
+        <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Service Day" required="required">
+                <option value="0">Service Day</option>
+                <option value="7">sunday</option>
+                <option value="6">saturday</option>
+                <option value="5">friday</option>
+                <option value="4">thursday</option>
+                <option value="3">wednesday</option>
+                <option value="2">tuesday</option>
+                <option value="1">mornday</option>
+          </select>
+        </div>
+      </div>
+      
+        <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Service Time" required="required">
+                <option value="0">Service Time</option>
+                <option value="3">evening</option>
+                <option value="2">afternoon</option>
+                <option value="1">morning</option>
+          </select>
+        </div>
+      </div>
+      
+        <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Public Holiday" required="required">
+                <option value="0">Is a public holiday</option>
+                <option value="0">no</option>
+                <option value="1">yes</option>
+          </select>
+        </div>
+      </div>
+      
+        <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Email Reminder" required="required">
+                <option value="0">Received email reminder</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+      
+        <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="SMS Notification" required="required">
+                <option value="0">Received sms notification</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Email Notification" required="required">
+                <option value="0">Received email notification</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="SMS Reminder" required="required">
+                <option value="0">Received sms reminder</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Free Transportation" required="required">
+                <option value="0">Free transportation</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="External Speaker" required="required">
+                <option value="0">External speaker</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Church Venue" required="required">
+                <option value="0">Church venue</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Outreach Program" required="required">
+                <option value="0">Outreach program</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Celebration" required="required">
+                <option value="0">Celebration</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-10">
+          <select class="form-control" type="number"  name="Love Feast" required="required">
+                <option value="0">Love Feast</option>
+                <option value="1">yes</option>
+                <option value="0">no</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="button btn btn-default">PREDICT</button>
+        </div>
+      </div>
+    </form>
+
+    <br>
+    <br>
+
+        {{ prediction_text }}
+
+  </div>
+  </div>
+
+  </body>
+</html>
