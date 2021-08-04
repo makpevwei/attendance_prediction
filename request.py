@@ -3,7 +3,7 @@ import json
 
 
 # url = 'http://localhost:5000/results'
-url = 'https://attendance-prediction.herokuapp.com//results'
+url = 'https://attendance-prediction.herokuapp.com/results'
 r = requests.post(url,json={'Gender':0,'Weather Condition':1,'Service Day':4,
        'Service Time':2, 'Public Holiday':1, 'SMS Notification':0,
        'Email Notification':0, 'SMS Reminder':1, 'Email Reminder':0,
