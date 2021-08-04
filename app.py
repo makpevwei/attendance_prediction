@@ -34,4 +34,3 @@ def results():
 
 if __name__ == "__main__":
     app.run()
-© 2021 GitHub, Inc.
