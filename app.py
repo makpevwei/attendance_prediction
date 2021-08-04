@@ -28,7 +28,7 @@ def results():
     data = request.get_json(force=True)
     prediction = model.predict_proba([np.array(list(data.values()))])[:, 1]
 
-    output =  round(prediction[0], 2)
+    output =  round(prediction[0], 2)+"%"
     return jsonify({'prediction': str(output*100)})
 
 if __name__ == "__main__":
