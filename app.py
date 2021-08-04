@@ -26,10 +26,10 @@ def predict():
 def results():
 
     data = request.get_json(force=True)
-    prediction = model.predict_proba([np.array(list(data.values()))])[:, 1]
+    prediction = model.predict([np.array(list(data.values()))])
 
-    output =  round(prediction[0], 2)+"%"
-    return jsonify({'prediction': str(output*100)})
+    output =  round(prediction)
+    return jsonify({'prediction': str(output)})
 
 if __name__ == "__main__":
     app.run()
