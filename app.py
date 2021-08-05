@@ -20,7 +20,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template("index.html", prediction_text= "PROBABILITY OF BEING ABSENT ; {}".format(output*100))
+    return render_template("index.html", prediction_text= "PROBABILITY OF BEING IN ATTENDANCE IS ; {}".format(output*100))
 
 @app.route('/results',methods=["GET","POST"])
 def results():
